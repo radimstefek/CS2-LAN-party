@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { useState } from "react";
@@ -18,7 +18,6 @@ export default function ContactForm() {
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     console.log("Odeslaná data:", formData);
-    // Zde můžete přidat odeslání dat na server např. pomocí fetch nebo axios
     setSubmitted(true);
   };
 
@@ -26,6 +25,7 @@ export default function ContactForm() {
     <div className="flex flex-col min-h-screen">
       {/* Horní část - Navbar */}
       <header>
+        {/* Oprava: Přidání isAuthenticated s výchozí hodnotou */}
         <Navbar isAuthenticated={false} />
       </header>
 
