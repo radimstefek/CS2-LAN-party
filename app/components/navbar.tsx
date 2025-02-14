@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
 interface NavbarProps {
-  isAuthenticated: boolean;
+  isAuthenticated?: boolean; // Nastavení jako volitelný prop
 }
 
-export default function Navbar({ isAuthenticated }: NavbarProps) {
+export default function Navbar({ isAuthenticated = false }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
