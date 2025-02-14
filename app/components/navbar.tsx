@@ -79,17 +79,22 @@ export default function Navbar({ isAuthenticated = false }: NavbarProps) {
           )}
         </div>
 
-        {/* Mobilní menu tlačítko */}
+        {/* Mobilní menu tlačítko s animací ikon */}
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="focus:outline-none"
+            className="focus:outline-none relative w-6 h-6"
           >
-            {mobileMenuOpen ? (
-              <FiX className="h-6 w-6 text-white" />
-            ) : (
-              <FiMenu className="h-6 w-6 text-white" />
-            )}
+            <FiMenu
+              className={`absolute top-0 left-0 transition-transform duration-300 transform ${
+                mobileMenuOpen ? "opacity-0 -rotate-90" : "opacity-100 rotate-0"
+              }`}
+            />
+            <FiX
+              className={`absolute top-0 left-0 transition-transform duration-300 transform ${
+                mobileMenuOpen ? "opacity-100 rotate-0" : "opacity-0 rotate-90"
+              }`}
+            />
           </button>
         </div>
       </div>
