@@ -67,8 +67,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo vlevo */}
           <motion.div className="flex items-center space-x-2" variants={itemVariants}>
-            {/* <img src="/images/cs2_footer_logo.png" alt="Logo" className="h-10 w-auto" /> */}
-            <img src="/images/_si][ki_ CS2 LAN Party.webp" alt="Logo" className="h-20 w-auto" />
+            <img src="/images/cs2_footer_logo.png" alt="Logo" className="h-10 w-auto" />
+            {/* <img src="/images/_si][ki_ CS2 LAN Party.webp" alt="Logo" className="h-20 w-auto" /> */}
             <span className="font-bold text-xl">CS2 LAN Tournament</span>
           </motion.div>
 

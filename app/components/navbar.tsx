@@ -40,7 +40,7 @@ export default function Navbar({ isAuthenticated = false }: NavbarProps) {
       className={`
       fixed top-0 left-0 w-full z-50 px-6 py-4 shadow-md text-white 
       transition-colors duration-300
-      ${isScrolled ? "bg-gray-900/50 backdrop-blur-md" : "bg-gray-900"}
+      ${isScrolled ? "bg-[#121212]/50 backdrop-blur-md" : "bg-[#121212]"}
     `}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
