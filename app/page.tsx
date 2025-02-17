@@ -12,6 +12,7 @@ import OverviewTournaments from "./components/overview_tournaments";
 import SmallInfo from "./components/small_info";
 import GridPage from "./components/grid";
 import Footer from "./components/footer";
+import BackToTop from "./components/BackToTop";
 
 export default function Page() {
   return (
@@ -29,6 +30,7 @@ export default function Page() {
       <footer>
         <Footer />
       </footer>
+      <BackToTop />
     </div>
   );
 }

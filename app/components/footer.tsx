@@ -81,7 +81,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Sociální sítě vpravo, rozdělené do dvou řádků */}
-          <motion.div className="flex flex-col w-full md:w-auto space-y-3">
+          <motion.div className="flex flex-col items-end w-full md:w-auto space-y-3">
             {/* Horní řádek: hlavní sítě zarovnané doprava */}
             <div className="flex justify-end space-x-6">
               {[
