@@ -11,28 +11,27 @@ export default function ContactForm() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange = (e: { target: { name: any; value: any } }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     console.log("Odeslaná data:", formData);
     setSubmitted(true);
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#121212] text-white">
       {/* Horní část - Navbar */}
       <header>
-        {/* Oprava: Přidání isAuthenticated s výchozí hodnotou */}
         <Navbar isAuthenticated={false} />
       </header>
 
       {/* Hlavní obsah - Kontaktní formulář */}
       <main className="flex-grow flex items-center justify-center">
-        <div className="max-w-lg w-full p-6 bg-gray-100 rounded shadow">
-          <h2 className="text-2xl font-bold mb-4 text-center">
+        <div className="max-w-lg w-full p-6 bg-[#1E1E1E] rounded shadow">
+          <h2 className="text-2xl font-bold mb-4 text-center text-[#FACC15]">
             Kontaktujte nás
           </h2>
           {submitted ? (
@@ -42,7 +41,7 @@ export default function ContactForm() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-gray-700">
+                <label htmlFor="name" className="block text-[#FACC15]">
                   Jméno:
                 </label>
                 <input
@@ -51,12 +50,12 @@ export default function ContactForm() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md bg-[#2A2A2A] text-white focus:outline-none focus:ring focus:border-blue-300"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-gray-700">
+                <label htmlFor="email" className="block text-[#FACC15]">
                   Email:
                 </label>
                 <input
@@ -65,12 +64,12 @@ export default function ContactForm() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md bg-[#2A2A2A] text-white focus:outline-none focus:ring focus:border-blue-300"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-gray-700">
+                <label htmlFor="message" className="block text-[#FACC15]">
                   Zpráva:
                 </label>
                 <textarea
@@ -79,7 +78,7 @@ export default function ContactForm() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md bg-[#2A2A2A] text-white focus:outline-none focus:ring focus:border-blue-300"
                   required
                 ></textarea>
               </div>

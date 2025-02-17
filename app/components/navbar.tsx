@@ -15,8 +15,8 @@ export default function Navbar({ isAuthenticated = false }: NavbarProps) {
   const menuItems = [
     { label: "Domů", href: "/" },
     { label: "O nás", href: "/o-nas" },
-    { label: "Služby", href: "/sluzby" },
-    { label: "Kontakt", href: "/kontak" },
+    { label: "Turnaje", href: "/tournaments" },
+    { label: "Kontakt", href: "/contact" },
   ];
 
   useEffect(() => {

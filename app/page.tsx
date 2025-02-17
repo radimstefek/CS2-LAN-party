@@ -9,6 +9,7 @@ import Navbar from "./components/navbar";
 import LandingPage from "./components/landing_page";
 import InfoSlider from "./components/info_slider";
 import OverviewTournaments from "./components/overview_tournaments";
+import SmallInfo from "./components/small_info";
 import GridPage from "./components/grid";
 import Footer from "./components/footer";
 
@@ -23,6 +24,7 @@ export default function Page() {
         <InfoSlider />
         <OverviewTournaments />
         <GridPage />
+        <SmallInfo />
       </main>
       <footer>
         <Footer />
