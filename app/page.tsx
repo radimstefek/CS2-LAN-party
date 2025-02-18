@@ -6,6 +6,7 @@
 export const revalidate = 0;*/
 
 import Navbar from "./components/navbar";
+import Dashboard from "./components/Dashboard";
 import LandingPage from "./components/landing_page";
 import InfoSlider from "./components/info_slider";
 import OverviewTournaments from "./components/overview_tournaments";
@@ -18,10 +19,11 @@ export default function Page() {
   return (
     <div className="flex flex-col min-h-screen">
       <header>
-        <Navbar isAuthenticated={false} />
+        <Navbar />
+        <LandingPage />
       </header>
       <main className="flex-grow">
-        <LandingPage />
+        <Dashboard />
         <InfoSlider />
         <OverviewTournaments />
         <GridPage />

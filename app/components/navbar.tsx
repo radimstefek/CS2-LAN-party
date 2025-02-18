@@ -1,20 +1,17 @@
 "use client";
 import Link from "next/link";
-//import { useState } from "react";
 import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import { useAuth } from "../context/AuthContext";
 
-interface NavbarProps {
-  isAuthenticated?: boolean; // Nastavení jako volitelný prop
-}
-
-export default function Navbar({ isAuthenticated = false }: NavbarProps) {
+export default function Navbar() {
+  const { isAuthenticated, logout } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const menuItems = [
     { label: "Domů", href: "/" },
-    { label: "O nás", href: "/o-nas" },
+    { label: "O nás", href: "/about" },
     { label: "Turnaje", href: "/tournaments" },
     { label: "Kontakt", href: "/contact" },
   ];
@@ -23,19 +20,18 @@ export default function Navbar({ isAuthenticated = false }: NavbarProps) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
-  
-    // Okamžitá kontrola, aby se stav isScrolled nastavil i při refreshi uprostřed stránky
     handleScroll();
-  
+
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  function handleLogout() {
+    logout();
+    setMobileMenuOpen(false);
+  }
+
   return (
-    // Přidány třídy `fixed top-0 left-0 w-full z-50`:
-    //<nav className="fixed top-0 left-0 w-full z-50 bg-gray-900 text-white px-6 py-4 shadow-md">
     <nav
       className={`
       fixed top-0 left-0 w-full z-50 px-6 py-4 shadow-md text-white 
@@ -56,7 +52,6 @@ export default function Navbar({ isAuthenticated = false }: NavbarProps) {
             <li key={item.href}>
               <Link href={item.href} className="relative group">
                 {item.label}
-                {/* Animované podtržení */}
                 <span className="relative left-0 bottom-0 block h-0.5 w-0 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </li>
@@ -66,7 +61,9 @@ export default function Navbar({ isAuthenticated = false }: NavbarProps) {
         {/* Pravý blok - Autentizační menu (Desktop) */}
         <div className="hidden md:flex items-center space-x-4">
           {isAuthenticated ? (
-            <button className="hover:underline">Profil</button>
+            <button onClick={handleLogout} className="hover:underline">
+              Odhlásit
+            </button>
           ) : (
             <>
               <Link href="/auth/login" className="hover:underline">
@@ -117,8 +114,11 @@ export default function Navbar({ isAuthenticated = false }: NavbarProps) {
             {/* Autentizační odkazy v mobilním menu */}
             <li className="pt-4 border-t border-gray-700">
               {isAuthenticated ? (
-                <button className="block w-full text-left px-4 py-2 hover:bg-gray-800 transition-colors">
-                  Profil
+                <button
+                  onClick={handleLogout}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-800 transition-colors"
+                >
+                  Odhlásit
                 </button>
               ) : (
                 <>

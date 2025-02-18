@@ -39,7 +39,7 @@ export default function ContactForm() {
     <div className="flex flex-col min-h-screen bg-[#121212] text-white">
       {/* Horní část - Navbar */}
       <header>
-        <Navbar isAuthenticated={false} />
+        <Navbar />
       </header>
 
       {/* Hlavní obsah - Kontaktní formulář */}
