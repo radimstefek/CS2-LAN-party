@@ -10,6 +10,7 @@ import Dashboard from "./components/Dashboard";
 import LandingPage from "./components/landing_page";
 import InfoSlider from "./components/info_slider";
 import OverviewTournaments from "./components/overview_tournaments";
+import OverviewServers from "./components/overview_cw_servers";
 import SmallInfo from "./components/small_info";
 import GridPage from "./components/grid";
 import Footer from "./components/footer";
@@ -26,6 +27,7 @@ export default function Page() {
         <Dashboard />
         <InfoSlider />
         <OverviewTournaments />
+        <OverviewServers />
         <GridPage />
         <SmallInfo />
       </main>

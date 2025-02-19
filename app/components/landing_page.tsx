@@ -8,8 +8,8 @@ export default function HomePage() {
       flex 
       items-center 
       justify-start 
-      bg-[url('/images/csbg_mobile2.jpg')]  /* Mobilní (výchozí) */
-      md:bg-[url('/images/csbg.jpg')]      /* Od md breakpointu a výš */
+      bg-[url('/images/csbg_mobile2.webp')]  /* Mobilní (výchozí) */
+      md:bg-[url('/images/csbg.webp')]      /* Od md breakpointu a výš */
       bg-cover 
       bg-center
       ">
@@ -56,7 +56,7 @@ export default function HomePage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          href="#"
+          href="/auth/login"
           className="inline-block bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-3 rounded-full text-lg font-medium transition-transform transform hover:scale-105"
         >
           Začít hru
