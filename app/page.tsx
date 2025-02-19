@@ -28,8 +28,8 @@ export default function Page() {
         <InfoSlider />
         <OverviewTournaments />
         <OverviewServers />
-        <GridPage />
         <SmallInfo />
+        <GridPage />
       </main>
       <footer>
         <Footer />
